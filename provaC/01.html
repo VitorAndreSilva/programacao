@@ -1,0 +1,41 @@
+<script>
+
+/* Faça um código em Javascript que receba do usuário o valor do salário de um funcionário e o seu nome completo. Feito isso, calcule e apresente individualmente a divisão deste salário nas categorias abaixo:
+- CASAN 1,5% do salário
+- Alimentação 30% do salário
+- Farmácia 9% do salário
+- Energia elétrica 8,5% do salário
+- Diversos 15% do salário
+- Poupança 11% do salário
+- Prestações 19,5% do salário
+- Vestuário 5,5% do salário
+*/
+
+// Entrada 
+
+const nome = Number(prompt("Olá! Qual é o seu nome?"));
+const salario = Number(prompt("Quanto é o seu salário?"));
+
+// Processamento
+
+const casan = salario * 0.015;
+const alimento = salario * 0.3;
+const farmacia = salario * 0.09;
+const energia = salario * 0.085;
+const diversos = salario * 0.15;
+const poupanca = salario * 0.11;
+const pretacoes = salario * 0.195;
+const vestuario = salario * 0.055;
+
+// Saída
+
+document.write(`R$${casan.toFixed(2).replace(".", ",")} você gastará com a CASAN. <br>`);
+document.write(`R$${alimento.toFixed(2).replace(".", ",")} você gastará com a alimentação. <br>`);
+document.write(`R$${farmacia.toFixed(2).replace(".", ",")} você gastará com a farmácia. <br>`);
+document.write(`R$${energia.toFixed(2).replace(".", ",")} você gastará com energia elétrica. <br>`);
+document.write(`R$${diversos.toFixed(2).replace(".", ",")} você gastará com diversos. <br>`);
+document.write(`R$${poupanca.toFixed(2).replace(".", ",")} você gastará com a poupança. <br>`);
+document.write(`R$${pretacoes.toFixed(2).replace(".", ",")} você gastará com prestações. <br>`);
+document.write(`R$${vestuario.toFixed(2).replace(".", ",")} você gastará com vestuário. <br>`);
+
+</script> 
