@@ -1,0 +1,67 @@
+<script>
+
+//ENTRADA
+
+const m2024311780 = prompt("Qual o seu nome completo?");
+const cpf = prompt("Qual o seu CPF ?");
+const bruto = Number(prompt("Qual o seu salário bruto?"));
+const codigo = prompt("Qual o seu código?");
+
+// PROCESSAMENTO
+
+let imposto = 0;
+let contribuicao = 0;
+let aumento = 200;
+
+// caso o codigo seja um dos apresentados, ele terá um imposto definido; senão, pagará 50 reais, apenas.
+
+switch (codigo) {
+    case "abc123":
+        contribuicao = bruto * 0.075;
+        aumento = bruto * 0.08;
+        break;
+
+    case "123abc":
+        contribuicao = bruto * 0.065;
+        aumento = bruto * 0.075
+        break;
+
+
+    case "xyz999":
+        contribuicao = bruto * 0.05;
+        aumento = bruto * 0.09
+        break;
+
+    case "9a8b7c":
+        contribuicao = bruto * 0.045;
+        aumento = bruto * 0.05
+        break;
+
+    case "log456":
+        contribuicao = bruto * 0.03;
+        aumento = bruto * 0.06
+        break;
+
+
+    default:
+        contribuicao = 50;
+        aumento = 200;
+        break;
+}
+
+// imposto de 12,5% do salario bruto, a menos que o salario seja inferior a 1412 reais
+if (1412>bruto) {
+    imposto = 0;    
+} else {
+    imposto = bruto * 0.125;
+}
+
+// SAÍDA
+
+document.write(`Seu nome é ${m2024311780} e seu N° de CPF é ${cpf}.<br>`);
+document.write(`Sua contribuição sindical será de R$${contribuicao.toFixed(2).replace(".", ",")}.<br>`);
+document.write(`Seu imposto para previdência social ${imposto.toFixed(2).replace(".", ",")}.<br>`);
+document.write(`Seu salário final após os impostos (SEM CONTAR COM O AUMENTO) será de R$${(bruto - contribuicao - imposto).toFixed(2).replace(".", ",")}.<br>`);
+document.write(`Seu salário era de R$${bruto.toFixed(2).replace(".", ",")}, mas com toda a variação, ele será de R$${(bruto - contribuicao - imposto + aumento).toFixed(2).replace(".", ",")}.<br>`);
+
+</script>
