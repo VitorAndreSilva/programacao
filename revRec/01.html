@@ -1,0 +1,46 @@
+<script>
+    const horas = Number(prompt("Quantas horas você trabalha"));
+    const unitario = Number(prompt("Qual é o preço unitário da hora?"));
+    const filhos = Number(prompt("Quantos filhos com menos de 14 anos você tem?"));
+
+    const bruto = horas * unitario;
+    let salarioFamilia = 0;
+    let imposto = 0;
+
+    switch (bruto) {
+        case bruto<=1372.81:
+            salarioFamilia = 10.5*filhos;
+            imposto = bruto * 8 / 100;
+            break;
+
+        case bruto>1372.81 && bruto<=2743.25:
+            salarioFamilia = 6.5 * filhos;
+            imposto = bruto * 10 / 100;
+            break;
+
+        case bruto>2743.25:
+            salarioFamilia = 1.5 * filhos;
+            imposto = bruto * 12 / 100;
+            break;
+    
+        default:
+            document.write("erro");
+            break;
+    }
+    
+    agua = bruto * 0.03;
+    alimentacao = bruto * 0.37;
+    energia = bruto * 0.12;
+    lazer = bruto * 0.13;
+    poupanca = bruto * 0.15;
+    educacao = bruto * 0.2;
+
+    document.write("Com base no salário apresentado, estas são as divisões: <br>");
+    document.write(`Alimentação: ${alimentacao}`)
+    document.write("");
+    document.write("");
+    document.write("");
+    document.write("");
+    document.write("");
+
+</script>

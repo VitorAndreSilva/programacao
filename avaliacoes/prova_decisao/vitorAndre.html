@@ -1,4 +1,4 @@
-<script>
+                <script>
 
 //ENTRADA
 
@@ -23,23 +23,23 @@ switch (codigo) {
 
     case "123abc":
         contribuicao = bruto * 0.065;
-        aumento = bruto * 0.075
+        aumento = bruto * 0.075;
         break;
 
 
     case "xyz999":
         contribuicao = bruto * 0.05;
-        aumento = bruto * 0.09
+        aumento = bruto * 0.09;
         break;
 
     case "9a8b7c":
-        contribuicao = bruto * 0.045;
-        aumento = bruto * 0.05
+        contribuicao = bruto * 0.045; 
+        aumento = bruto * 0.05;
         break;
 
     case "log456":
         contribuicao = bruto * 0.03;
-        aumento = bruto * 0.06
+        aumento = bruto * 0.06;
         break;
 
 
@@ -60,7 +60,7 @@ if (1412>bruto) {
 
 document.write(`Seu nome é ${m2024311780} e seu N° de CPF é ${cpf}.<br>`);
 document.write(`Sua contribuição sindical será de R$${contribuicao.toFixed(2).replace(".", ",")}.<br>`);
-document.write(`Seu imposto para previdência social ${imposto.toFixed(2).replace(".", ",")}.<br>`);
+document.write(`Seu imposto para previdência social R$${imposto.toFixed(2).replace(".", ",")}.<br>`);
 document.write(`Seu salário final após os impostos (SEM CONTAR COM O AUMENTO) será de R$${(bruto - contribuicao - imposto).toFixed(2).replace(".", ",")}.<br>`);
 document.write(`Seu salário era de R$${bruto.toFixed(2).replace(".", ",")}, mas com toda a variação, ele será de R$${(bruto - contribuicao - imposto + aumento).toFixed(2).replace(".", ",")}.<br>`);
 

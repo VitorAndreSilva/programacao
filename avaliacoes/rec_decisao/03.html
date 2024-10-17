@@ -1,0 +1,57 @@
+<script>
+    
+    const nome = prompt("Bom dia! Por favor, informe seu nome:");
+    const pergunta = prompt("Você gostaria de doar algo? ('S' para 'sim' ou 'N' para 'não')");
+    let brinquedos = 79;
+    let roupas = 77;
+    let higiene = 73;
+    let tipo = ""
+
+    if (pergunta == "S") {
+        codigo = prompt("• Digite (1) para doar brinquedos / Digite (2) para doar roupas / Digite (3) para doar itens de higiene pessoal / Digite (12) para doar brinquedos e roupas / Digite (13) para doar brinquedos e higiene pessoal / Digite (23) para doar roupas e itens de higiene pessoal / Digite (123) para doar brinquedos, roupas e itens de higiene pessoal.")
+        if (codigo == "1") {
+            brinquedos = brinquedos + 1;
+            tipo = "um brinquedo"
+        } else if (codigo == "2") {
+            roupas = roupas + 1;
+            tipo = "uma roupa"
+        } else if (codigo == "3") {
+            higiene =  higiene + 1;
+            tipo = "um item de higiene pessoal"
+        } else if (codigo == "12") {
+            brinquedos = brinquedos + 1;
+            roupas = roupas + 1;
+            tipo = "brinquedo e roupa"
+        } else if (codigo == "13") {
+            brinquedos = brinquedos + 1;
+            higiene =  higiene + 1;
+            tipo = "brinquedo e item de higiene pessoal"
+        } else if (codigo == "23") {
+            roupas = roupas + 1;
+            higiene =  higiene + 1;
+            tipo = "roupa e item de higiene pessoal"
+        } else if (codigo == "123") {
+            brinquedos = brinquedos + 1;
+            roupas = roupas + 1;
+            higiene =  higiene + 1;
+            tipo = "brinquedo, roupa e item de higiene pessoal"
+        } else {
+            alert("Código inválido!")
+        }
+
+        document.write(`${nome}, obrigado por doar ${tipo}! Agora, já foram doados: <br>`);
+        document.write(`${brinquedos} brinquedos <br>`);
+        document.write(`${roupas} roupas <br>`);
+        document.write(`${higiene} itens de higiene pessoal <br>`);
+
+    } else if (pergunta == "N"){
+        document.write(`Obrigado por participar, ${nome}. <br>`);
+        document.write(`No momento, já alcançamos algumas doações: <br>`);
+        document.write(`79 brinquedos <br>`);
+        document.write(`77 roupas <br>`);
+        document.write(`73 itens higiene pessoal`);
+    } else {
+        alert("Valor inválido!")
+    }
+
+</script>

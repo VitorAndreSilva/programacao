@@ -1,0 +1,28 @@
+<script>
+    const nome = prompt("Qual o nome do funcionário da empresa?");
+    const bruto = Number(prompt("Qual seu salário bruto?"));
+
+    let imposto = 0;
+
+    if (bruto <= 2529.2) {
+        imposto = 0;
+    } 
+    else if (bruto > 2529.2 && bruto <= 2826.65) {
+        imposto = 0.075 * bruto;
+    }
+    else if (bruto > 2826.65 && bruto <= 3751.05) {
+        imposto = 0.075 * bruto;
+    }
+    else if (bruto > 3751.05 && bruto <= 4664.68) {
+        imposto = 0.225 * bruto;
+    }
+    else if (bruto > 4664.68) {
+        imposto = 0.275 * bruto;
+    }
+    else {
+        alert("Valor inválido");
+    }
+
+    document.write(`Olá, ${nome}! <br>`);
+    document.write(`Você recebe R$${bruto.toFixed(2).replace(".",",")}, porém, você terá que pagar um imposto de renda de R$${imposto.toFixed(2).replace(".",",")}; ao fim, seu salário líquido será de R$${(bruto - imposto).toFixed(2).replace(".",",")}.`)
+</script>

@@ -1,0 +1,28 @@
+<script>
+    
+   const aluno = prompt("Informe seu nome:");
+   const disciplina = prompt("Informe a disciplina:");
+   const N1 = Number(prompt("Qual sua primeira nota?"));
+   const N2 = Number(prompt("Qual sua segunda nota?"));
+   const N3 = Number(prompt("Qual sua terceira nota?"));
+   const MLE = Number(prompt("Qual a sua nota média da lista de exercícios?"));
+
+   const aproveitamento = ( N1*2 + N2*3 + N3*4 + MLE ) / 10;
+   let conceito = "A";
+
+   if (aproveitamento >=9 && aproveitamento <= 10) {
+        conceito = "A";
+   } else if (aproveitamento >= 7.5 && aproveitamento < 9){
+        conceito = "B";
+   } else if (aproveitamento >= 6 && aproveitamento < 7.5) {
+        conceito = "C";
+   } else if (aproveitamento < 6 && aproveitamento >= 0){
+        conceito = "D";
+   } else {
+        alert("Valor inválido")
+   }
+
+   document.write(`Olá, ${aluno}! <br>`);
+   document.write(`Na disciplina de ${disciplina}, sua nota conceito é ${conceito}!`);
+
+</script>
