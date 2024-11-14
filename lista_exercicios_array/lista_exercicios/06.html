@@ -1,0 +1,56 @@
+<meta charset="UTF-8" />
+<script>
+    /*
+    PROBLEMA: LOJA DE VEÍCULOS
+    Crie os seguintes arrays:
+    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+    let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+    let carrosHatch = ["308", "Focus", "i30"];
+    
+    Peça para o usuário informar mais três veículos para serem inseridos na lista. Para inserir na lista correta, peça também para o usuário identificar o tipo de veículo que deseja inserir, se é SUV, Sedan ou Hatch.
+
+    Apresente a lista final de cada tipo de veículo.
+    */
+
+    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+    let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+    let carrosHatch = ["308", "Focus", "i30"];
+
+    //ENTRADA
+    
+    const veiculo1 = prompt("Informe mais um veículo a ser adicionado: ");
+    const tipo1 = prompt("Informe o tipo deste veículo: ");
+    const veiculo2 = prompt("Informe mais um veículo a ser adicionado: ");
+    const tipo2 = prompt("Informe o tipo deste veículo: ");
+    const veiculo3 = prompt("Informe mais um veículo a ser adicionado: ");
+    const tipo3 = prompt("Informe o tipo deste veículo: ");
+
+
+    //PROCESSAMENTO
+
+    (tipo1 == "SUV") ? carrosSUV.push(veiculo1) : 
+    (tipo1 == "Sedan") ? cassosSedan.push(veiculo1) :
+    (tipo1 == "Hatch") ? cassosHatch.push(veiculo1) :
+    alert("Valor inválido");
+
+    (tipo2 == "SUV") ? carrosSUV.push(veiculo2) : 
+    (tipo2 == "Sedan") ? cassosSedan.push(veiculo2) :
+    (tipo2 == "Hatch") ? cassosHatch.push(veiculo2) :
+    alert("Valor inválido");
+
+    (tipo3 == "SUV") ? carrosSUV.push(veiculo3) : 
+    (tipo3 == "Sedan") ? cassosSedan.push(veiculo3) :
+    (tipo3 == "Hatch") ? cassosHatch.push(veiculo3) :
+    alert("Valor inválido");
+
+    //SAÍDA
+
+    document.write("A lista de carro agora é: <br>");
+    document.write(carrosSUV + "<br>");
+    document.write(cassosSedan + "<br>")
+    document.write(carrosHatch);
+    // document.write(carrosSUV + "<br>");
+    // document.write(carrosSedan + "<br>");
+    // document.write(carrosHatch);
+
+</script>
