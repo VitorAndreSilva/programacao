@@ -1,0 +1,13 @@
+<script>
+
+    let fibonacci = [0, 1];
+    let numero = Number(prompt("Quantos números deseja visualizar na sequência de Fibonacci?"));
+
+    for (let contador = 1; contador < numero; contador++) {
+        const ultimo = fibonacci.slice(-2);
+        // alert(ultimo);
+        // document.write(ultimo);
+        fibonacci.push(ultimo[0] + ultimo[1]);
+    }
+    document.write(fibonacci)
+</script>
