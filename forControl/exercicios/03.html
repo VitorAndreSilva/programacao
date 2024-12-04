@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: MAIOR NÚMERO
+    Faça um programa que peça ao usuário para informar cinco números.
+    No final, apresente o maior número informado pelo usuário.
+    */
+
+    //ENTRADA
+    let numeros = [];
+
+
+    for (let contador = 0; contador < 5; contador++) {
+        const numero = Number(prompt("Informe um número, por favor:"));
+        numeros.push(numero);
+    }
+
+    numeros.sort((a, b) => a - b);
+    // numeros.slice(-1)
+
+    //SAÍDA
+
+    document.write(`O maior número apresentado por vós é ${numeros.slice(-1)}`);
+
+</script>

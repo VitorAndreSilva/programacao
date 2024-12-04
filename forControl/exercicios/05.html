@@ -1,0 +1,32 @@
+<!-- <meta charset="UTF-8"> -->
+<script>
+    /*
+    PROBLEMA: VALIDAR NÚMERO PRIMO
+    Faça um programa que peça para o usuário informar um número. Identifique se o número fornecido pelo usuário é um número primo e apresente na tela.
+    */
+
+    //ENTRADA
+
+    const numero = Number(prompt("Forneça um número: "));
+    let primo = [];
+
+    //PROCESSAMENTO
+
+    for (let contador = 1; contador <= numero; contador++) {
+        
+        if (numero % contador == 0) {
+            primo.push(numero);
+            // console.log("Numero adicionado")
+        }
+        
+    }
+
+    //SAÍDA
+
+    if (primo.length == 2) {
+        document.write(`O número ${numero} é primo!`);
+    } else {
+        alert("NÃO É PRIMO");
+    }
+
+</script>

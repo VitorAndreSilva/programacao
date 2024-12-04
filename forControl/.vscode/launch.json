@@ -4,10 +4,11 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open exemplo2.html",
+            "name": "Open 02.html",
             "file": "/home/vitor.andre/Documentos/programacao/forControl/exemplos/exemplo2.html"
         }
     ]
