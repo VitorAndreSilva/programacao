@@ -11,18 +11,36 @@
     const numero2 = Number(prompt("Forneça um número para terminarmos a contagem: "));
 
     let numeros = [];
+    let pares = [];
+    let impares = [];
+
+    if (numero2 < numero) {
+        alert("ERRO");
+    }
     
     //PROCESSAMENTO
 
-    for (numero; numero < numero2; numero++) {
+    if (numero2 < numero) {
+        alert("ERRO");
+    }
+
+    for (numero = numero + 1; numero < numero2; numero++) {
         
         numeros.push(numero);
+
+        if (numero % 2 == 0) {
+            pares.push(numero);
+        } else {
+            impares.push(numero);
+        }
 
     }
 
     
     //SAÍDA
 
-    document.write(`Entre estes números existem ${numeros.length} números.`);
+    document.write(`Entre estes números existem ${numeros.length} números.<br>`);
+    document.write(`Destes, ${pares.length} são pares: ${pares}<br>`);
+    document.write(`Destes, ${impares.length} são ímpares: ${impares}`);
 
 </script>
