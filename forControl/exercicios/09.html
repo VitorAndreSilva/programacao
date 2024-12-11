@@ -15,11 +15,11 @@
     for (contador; contador < 5; contador++) {
         pais = pais * 1.03;
     }
-    document.write(`O país vai chegar aos ${pais.toFixed(2).replace(".", ",")} habitantes em 5 anos.<br>`);
+    document.write(`O país vai chegar aos ${Math.floor(pais)} habitantes em 5 anos.<br>`);
 
     for (contador; contador < 10; contador++) {
         pais = pais * 1.03;
     }
-    document.write(`O país vai chegar aos ${pais.toFixed(2).replace(".", ",")} habitantes em 10 anos.`);
+    document.write(`O país vai chegar aos ${Math.floor(pais)} habitantes em 10 anos.`);
 
 </script>

@@ -36,11 +36,13 @@
         }
     }
 
+    soma = candidato1 + candidato2 + candidato3;
+
     //SAÍDA
 
     document.write("<h1>Total de votos</h1><ul>");
-    document.write(`${candidatos[0]}: ${candidato1} <br>`);
-    document.write(`${candidatos[1]}: ${candidato2} <br>`);
-    document.write(`${candidatos[2]}: ${candidato3}</ul>`);
+    document.write(`<li>${candidatos[0]}: ${candidato1 / soma * 100}% dos votos: ${candidato1} votos </li>`);
+    document.write(`<li>${candidatos[1]}: ${candidato2 / soma * 100}% dos votos: ${candidato2} votos </li>`);
+    document.write(`<li>${candidatos[2]}: ${candidato3 / soma * 100}% dos votos: ${candidato3}votos </li></ul>`);
 
 </script>
