@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: PESQUISA DE IDADE
+    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+
+    a) A média dos salários do grupo;
+    b) A maior e a menor idade do grupo;
+    c) A quantidade de mulheres na região;
+    d) A idade e o sexo da pessoa que possui o menor salário;
+
+    Finalize a entrada de dados ao ser digitada uma idade negativa.
+    */
+
+    //ENTRADA
+    let salario;
+    let idade;
+    let sexo;
+    let idades = [];
+    let salarios = [];
+    let total = 0
+    let mulheres = 0;
+
+    //PROCESSAMENTO
+    do {
+        idade = Number(prompt("Informe a idade do cidadão:"));
+        idades.push(idade);
+        salario = Number(prompt("Informe o salário do cidadão:"));
+        salarios.push(salario);
+        sexo = prompt("Informe o sexo (M/F) do cidadão:");
+        if (sexo == "F") {
+            mulheres++;
+        }
+    } while (idade>=0);
+
+    let idadeCrescente = idades.sort(function(a, b) {
+        return a - b;
+    });
+
+    for (let contador = 0; contador < salarios.length; contador++) {
+        total += salarios[contador];
+    }
+
+    //SAÍDA
+    document.write(`Média de salários da região: ${total / salario.length}`);
+    document.write(`Pessoa mais velha da região: ${idadeCrescente[0]}`);
+    document.write(`Pessoa mais nova da região: ${idadeCrescente.reverse[0]}`);
+    document.write(`Quantidade de mulheres da região: ${mulheres}`);
+    //document.write(``)
+
+</script>

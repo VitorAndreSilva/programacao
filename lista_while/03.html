@@ -11,10 +11,18 @@
     */
 
     //ENTRADA
-
+    let nome = prompt("Insira seu nome:");
+    let idade = prompt("Insira seu idade:");
+    let sexo = prompt("Insira seu sexo:");
+    let civil = prompt("Insira seu estado civil:");
 
     //PROCESSAMENTO
-
+    while (nome.length < 3 || idade > 150 || sexo != "f" || sexo != "m" || civil != "s" || civil != "c" || civil != "v" || civil != "d") {
+        nome = prompt("Insira seu nome:");
+        idade = prompt("Insira seu idade:");
+        sexo = prompt("Insira seu sexo:");
+        civil = prompt("Insira seu estado civil:"); 
+    }
 
     //SAÍDA
 
