@@ -1,0 +1,44 @@
+<script>
+/*uma loja de roupas precisa de informação para fazer a encomenda de camisa Pergunte ao usuário: o tamanho da camisa (P, M, G, GG) , o tecido que deseja (algodão,Linho e Viscose) , que tipo de camisa quer (manga longa, curta e regata), e a cor (verde, azul, preto, branco). No final informe as informações da compra e que foi confirmado para ser pego na loja*/
+
+    const info = [];
+    
+    let i = 0;
+    do {
+        let frase = '';
+        if (i == 0) {
+            frase = 'Tamanho da camisa (P, M, G OU GG)';
+        }
+        else if (i == 1) {
+            frase = 'Tipo de tecido (algodão, linho, viscose)';
+        }
+        else if (i == 2) {
+            frase = 'Tipo da camisa (manga longa, manga curta, regata)';
+        }
+        else {
+            frase = 'Cor (verde, azul, branco, preto)';
+        }
+        const pergunta = prompt(frase);
+
+        if (i == 0 && ['P', 'M', 'G', 'GG'].includes(pergunta.toLocaleUpperCase())) {
+            info.push(pergunta);
+        }
+        else if (i == 1 && ['algodão', 'linho', 'viscose'].includes(pergunta)) {
+            info.push(pergunta);
+        }
+        else if (i == 2 && ['manga longa', 'manga curta', 'regata'].includes(pergunta)) {
+            info.push(pergunta);
+        }
+        else if (['verde', 'azul', 'branco', 'preto'].includes(pergunta)) {
+            info.push(pergunta);
+        }
+        else {
+            alert('Digite certo seu animal de teta');
+            i--;
+        }
+        i++;
+    }while (i < 4);
+
+    document.write("Detalhes da compra: ");
+    document.write(info.join(" - "));
+</script>

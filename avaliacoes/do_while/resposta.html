@@ -1,0 +1,28 @@
+<script>
+    /*
+    PROBLEMA: QUADRADOS
+    Peça para o usuário informar um número inteiro e faça um script que identifique todos os quadrados presentes no intervalo entre 1 e o número informado.
+    */
+
+    //ENTRADA
+    let numero = Number(prompt("Informe um número para avaliarmos quantos quadrados há no intervalo de um a este número:"));
+    let contador = 1;
+    let quadrados = [];
+
+    //PROCESSAMENTO
+    do {
+        numero = Number(prompt("Não existe quadrado antes deste número. Por favor, informe um número válido:"));
+    } while (numero < 2);
+
+    while (contador < numero) {
+        if ((contador ** 0.5) % 1 == 0) {
+            quadrados.push(contador);
+        } else if (numero < 2) {
+            alert("Não existe quadrado antes deste número!")
+        }
+        contador++; 
+    }
+
+    //SAÍDA
+    document.write(quadrados.join(", "));
+</script>
