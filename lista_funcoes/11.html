@@ -9,24 +9,26 @@
     function primo(numero){
         let primos = [];
         let naoPrimos = [];
-        let numeros = list(range(3, 100));
-        numeros.remove(numero);
-        for (let i in numeros){
-            if (numero % i == 0){
+        //let numeros = list(range(3, 100));
+        //numeros.remove(numero);
+        for (let i = 2; i <= Math.sqrt(numero); i++){
+            if (numero % i === 0){
             naoPrimos.push(numero);
             }
-            else if (numero % i != 0){
+            else if (numero % i !== 0){
             primos.push(numero);
             }
+            console.log(naoPrimos.length);
+            console.log(primos.length);
         }
         if (primos.lenght > naoPrimos.lenght) {
-            document.write(primos[0], "é primo!")
+            document.write(numero, " é primo!")
         }
-        else {
-            document.write(naoPrimos[0], "não é primo!");
+        else if (naoPrimos.lenght > primos.lenght){
+            document.write(numero, " não é primo!");
         }
     }
 
-    primo(numero)
+    primo(numero);
 
 </script>
