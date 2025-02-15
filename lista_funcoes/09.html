@@ -4,7 +4,17 @@
     Peça para o usuário informar um número inteiro. Calcule o fatorial do número informado pelo usuário, usando função JavaScript e retorne o resultado para o usuário.
     */
 
-    let numero = Number(prompt("Informe um número: "));
+    function fatorial(numero) {
+        if (numero == 1) {
+            return 1;
+        } else {
+            return numero * fatorial(numero - 1);
+        }
+    }
+    let resultado = fatorial(prompt("Informe um númeo inteiro:"));
+    alert(resultado);
+
+    /*let numero = Number(prompt("Informe um número: "));
 
     function fatorial(numero){
         let resposta = 1;
@@ -17,6 +27,6 @@
         alert(`O fatorial deste número é ${resposta}`);
     }
 
-    fatorial(numero);
+    fatorial(numero);*/
 
 </script>
