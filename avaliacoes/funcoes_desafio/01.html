@@ -1,0 +1,72 @@
+<script>
+    const estoque = [
+        { id: 1, nome: "Caderno", preco: 15, quantidade: 10 },
+        { id: 2, nome: "Caneta", preco: 5, quantidade: 20 },
+        { id: 3, nome: "Mochila", preco: 120, quantidade: 5 }
+    ];
+
+    //Problema: Gestão de Estoque
+    /*
+    1. Criar uma função buscarProduto(nome) que recebe um nome e retorna o produto (ou mensagem de não encontrado).
+    2. Criar uma função adicionarEstoque(id, qtd) que aumenta o estoque de um produto.
+    3. Criar uma função venderProduto(id, qtd) que reduz o estoque e impede vendas acima do disponível.
+    4. Criar uma função calcularValorTotalEstoque() que retorna o valor total dos produtos no estoque.
+    5. Criar um menu (switch case) para o usuário escolher ações repetidamente (entre as funções desenvolvidas) até decidir sair (opção para sair - 0).
+    */
+
+    let opcao;
+    let nome;
+    let qtd;
+    let somaPrecos;
+
+    while (0 !== opcao){
+        opcao = Number(prompt(`Escolha uma opção entre os números:
+        0- Para encerrar
+        1- Para buscar um produto
+        2- Para aumentar o estoque de um produto
+        3- Para reduzir o estoque de um produto
+        4- Para saber o valor total do estoque`))
+
+        switch (opcao) {
+            case 1:
+                function buscarProduto(nome){
+                    nome = prompt("Digite o nome do produto que você deseja buscar:");
+                    alert(estoque[nome].nome);
+                }
+                buscarProduto(nome);
+                break;
+
+            case 2:
+                function adicionarEstoque(nome, qtd){
+                    nome = prompt("Digite o nome do produto que você deseja buscar:");
+                    qtd = Number(prompt("Quantos itens você quer adicionar?"));
+                    estoque[nome].quantidade+=qtd;
+                }
+                adicionarEstoque(nome, qtd);
+                break;
+
+            case 3:
+                function venderProduto(nome, qtd) {
+                    nome = prompt("Digite o nome do produto que você deseja buscar:");
+                    qtd = Number(prompt("Quantos itens você quer adicionar?"));
+                    estoque[nome].quantidade-=qtd; 
+                }
+                venderProduto();
+                break;
+
+            case 4:
+                function calcularValorTotalEstoque() {
+                    for (let contador = 0; contador < estoque.length; contador++) {
+                        somaPrecos += estoque[contador].preco;
+                    }
+                }
+                calcularValorTotalEstoque();
+                break;
+        
+            default:
+                break;
+        }
+    }
+
+
+</script>
