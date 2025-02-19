@@ -1,0 +1,66 @@
+<script>
+    const alunos = [
+        { nome: "Ana", notas: [7, 8, 9] },
+        { nome: "Carlos", notas: [5, 6, 4] },
+        { nome: "Bruna", notas: [9, 9, 10] }
+    ];
+    /*
+    1. Criar uma função calcularMedia(nome) que retorna a média de um aluno.
+    2. Criar uma função classificarAluno(nome) que retorna "Aprovado", "Recuperação" ou "Reprovado" com base na média.
+    3. Criar uma função adicionarNota(nome, nota) para incluir mais notas ao aluno.
+    4. Criar um menu interativo para buscar alunos, adicionar notas e verificar médias.
+    */
+
+    let opcao;
+    let nome;
+    let soma;
+    let media;
+    let novaNota;
+
+    while (opcao !==0){
+        opcao = Number(prompt(`Escolha uma opção entre os números:
+        0- Para encerrar
+        1- Para buscar a média de um aluno
+        2- Para ver a situação de um aluno
+        3- Para incluir mais notas a um aluno`));
+
+        switch (opcao) {
+            case 1:
+                function calcularMedia(nome) {
+                    nome = prompt("Digite o nome do aluno que você deseja buscar:");
+                    for (let nota in alunos[nome].notas) {
+                        soma += nota;
+                    }
+                    alert(`A média de ${alunos[nome]} é ${soma / 3}.`);
+                }
+                calcularMedia(nome)
+                break;
+
+            case 2:
+                function classificarAluno(nome) {
+                    nome = prompt("Digite o nome do aluno que você deseja buscar a média:");
+                    for (let nota in alunos[nome].notas) {
+                        soma += nota;
+                    }
+                    if ((soma / 3) >= 6) {
+                        alert("Aprovado");
+                    } else {
+                        alert("Recuperação");
+                    }
+                }
+                classificarAluno(nome);
+                break
+
+            case 3:
+                function adicionarNota(nome, nota) {
+                    nome = prompt("Digite o nome do aluno que você deseja incluir mais notas:");
+                    novaNota = Number(prompt("Digite a nova nota que você deseja incluir:"));
+                    alunos[nome].push(novaNota);
+                }
+        
+            default:
+                break;
+        };
+    };
+    
+</script>
