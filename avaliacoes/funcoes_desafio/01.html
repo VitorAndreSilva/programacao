@@ -1,5 +1,5 @@
 <script>
-    const estoque = [
+    let estoque = [
         { id: 1, nome: "Caderno", preco: 15, quantidade: 10 },
         { id: 2, nome: "Caneta", preco: 5, quantidade: 20 },
         { id: 3, nome: "Mochila", preco: 120, quantidade: 5 }
@@ -17,10 +17,11 @@
     let opcao;
     let nome;
     let qtd;
-    let somaPrecos;
+    let somaPrecos = 0;
 
     while (0 !== opcao){
-        opcao = Number(prompt(`Escolha uma opção entre os números:
+        opcao = Number(prompt(`Dada a seguinte lista:
+        Escolha uma opção entre os números:
         0- Para encerrar
         1- Para buscar um produto
         2- Para aumentar o estoque de um produto
@@ -30,35 +31,39 @@
         switch (opcao) {
             case 1:
                 function buscarProduto(nome){
-                    nome = prompt("Digite o nome do produto que você deseja buscar:");
-                    alert(estoque[nome].nome);
+                    nome = prompt("Digite o numero do produto que você deseja buscar:");
+                    alert(estoque[nome - 1].nome);
                 }
                 buscarProduto(nome);
                 break;
 
             case 2:
                 function adicionarEstoque(nome, qtd){
-                    nome = prompt("Digite o nome do produto que você deseja buscar:");
+                    nome = prompt("Digite o número do produto que você deseja buscar:");
                     qtd = Number(prompt("Quantos itens você quer adicionar?"));
-                    estoque[nome].quantidade+=qtd;
+                    estoque[nome - 1].quantidade += estoque[nome - 1].quantidade ;
+                    alert(`${estoque[nome - 1].quantidade}`);
                 }
                 adicionarEstoque(nome, qtd);
                 break;
 
             case 3:
                 function venderProduto(nome, qtd) {
-                    nome = prompt("Digite o nome do produto que você deseja buscar:");
-                    qtd = Number(prompt("Quantos itens você quer adicionar?"));
-                    estoque[nome].quantidade-=qtd; 
+                    nome = prompt("Digite o número do produto que você deseja buscar:");
+                    qtd = Number(prompt(`Quantos itens você quer retirar de ${estoque[nome - 1].nome}?`));
+                    estoque[nome - 1].quantidade = estoque[nome - 1].quantidade - qtd;
+                    //console.log()
+                    alert(estoque[nome - 1].quantidade);
                 }
-                venderProduto();
+                venderProduto(nome, qtd);
                 break;
 
             case 4:
                 function calcularValorTotalEstoque() {
                     for (let contador = 0; contador < estoque.length; contador++) {
-                        somaPrecos += estoque[contador].preco;
+                        somaPrecos = somaPrecos+ estoque[contador].preco;
                     }
+                    alert(somaPrecos);
                 }
                 calcularValorTotalEstoque();
                 break;
