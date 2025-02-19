@@ -14,13 +14,18 @@
     5. Criar um menu (switch case) para o usuário escolher ações repetidamente (entre as funções desenvolvidas) até decidir sair (opção para sair - 0).
     */
 
+    let itens = ``;
     let opcao;
     let nome;
     let qtd;
     let somaPrecos = 0;
 
+
+
     while (0 !== opcao){
         opcao = Number(prompt(`Dada a seguinte lista:
+        ${JSON.stringify(estoque)}
+        
         Escolha uma opção entre os números:
         0- Para encerrar
         1- Para buscar um produto
@@ -69,9 +74,11 @@
                 break;
         
             default:
+                opcao = 0;
                 break;
         }
     }
+    alert("Prorgama encerrado")
 
 
 </script>
