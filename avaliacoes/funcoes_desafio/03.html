@@ -11,36 +11,44 @@
     4. Criar um menu interativo para buscar alunos, adicionar notas e verificar médias.
     */
 
+    //Entrada
     let opcao;
     let nome;
-    let soma;
+    let nota = 0;
+    let soma = 0;
     let media;
-    let novaNota;
+    let novaNota = 0;
 
-    while (opcao !==0){
-        opcao = Number(prompt(`
-        Escolha uma opção entre os números:
+    //Processamento
+
+    while (opcao !== 0) {
+        opcao = Number(prompt(`Escolha uma opção entre os números:
         0- Para encerrar
         1- Para buscar a média de um aluno
         2- Para ver a situação de um aluno
-        3- Para incluir mais notas a um aluno`));
+        3- Para incluir mais notas a um aluno
+        
+        ${"Aluno(a): " + alunos[0].nome + " | Nota:" + alunos[0].notas}
+        ${"Aluno(a): " + alunos[1].nome + " | Nota:" + alunos[1].notas}
+        ${"Aluno(a): " + alunos[2].nome + " | Nota:" + alunos[2].notas}
+        `));
 
         switch (opcao) {
             case 1:
                 function calcularMedia(nome) {
-                    nome = prompt("Digite o nome do aluno que você deseja buscar:");
-                    for (let nota in alunos[nome].notas) {
-                        soma += nota;
+                    nome = Number(prompt("Digite o número do aluno que você deseja buscar:"));
+                    for (nota of alunos[nome - 1].notas) {
+                        soma = soma + nota;
                     }
-                    alert(`A média de ${alunos[nome]} é ${soma / 3}.`);
+                    alert(`A média de ${alunos[nome - 1].nome} é ${soma / 3}.`);
                 }
                 calcularMedia(nome)
                 break;
 
             case 2:
                 function classificarAluno(nome) {
-                    nome = prompt("Digite o nome do aluno que você deseja buscar a média:");
-                    for (let nota in alunos[nome].notas) {
+                    nome = Number(prompt("Digite o número do aluno que você deseja buscar a média:"));
+                    for (nota of alunos[nome - 1].notas) {
                         soma += nota;
                     }
                     if ((soma / 3) >= 6) {
@@ -53,15 +61,21 @@
                 break
 
             case 3:
-                function adicionarNota(nome, nota) {
-                    nome = prompt("Digite o nome do aluno que você deseja incluir mais notas:");
+                function adicionarNota(nome, nota, novaNota) {
+                    nome = Number(prompt("Digite o número do aluno que você deseja incluir mais notas:"));
                     novaNota = Number(prompt("Digite a nova nota que você deseja incluir:"));
-                    alunos[nome].push(novaNota);
+                    alunos[nome - 1].notas.push(novaNota);
                 }
-        
+                adicionarNota(nome, nota, novaNota);
+
             default:
+                opcao = 0;
                 break;
         };
+
     };
-    
+
+    //Saída
+    alert(`Programa encerrado!`);
+
 </script>
